@@ -1,0 +1,48 @@
+:root{
+  --ink:#1a1a1a; --muted:#666; --line:#e2e2e2; --link:#0645ad; --accent:#0b6e4f;
+}
+*{box-sizing:border-box}
+body{
+  font:16px/1.65 Georgia,"Times New Roman",serif;
+  color:var(--ink); margin:0; background:#fff;
+}
+main{max-width:48rem;margin:3rem auto;padding:0 1.2rem}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1{font-size:1.7rem;line-height:1.25;margin:0 0 .3rem}
+h2{font-size:1.2rem;margin:2rem 0 .6rem}
+
+/* index header */
+.site-head{border-bottom:1px solid var(--line);padding-bottom:1.3rem;margin-bottom:1.5rem}
+.tagline{color:var(--muted);font-style:italic;margin:.2rem 0 .6rem}
+.ids{color:var(--muted);font-size:.92rem;margin:0}
+
+/* publication list */
+.pub-list h2{margin-top:0}
+article.pub{border-top:1px solid var(--line);padding:1.1rem 0}
+article.pub h3{font-size:1.12rem;margin:0 0 .25rem;font-weight:600}
+article.pub h3 a{color:var(--ink)}
+article.pub h3 a:hover{color:var(--link)}
+article.pub .m{color:var(--muted);font-size:.88rem;margin:.15rem 0 .5rem}
+article.pub .excerpt{margin:.4rem 0 .6rem;text-align:justify}
+.badge{display:inline-block;font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;
+  background:#eef6f2;color:var(--accent);border:1px solid #cfe6dc;border-radius:3px;
+  padding:.05rem .4rem;vertical-align:middle}
+.pub-links a{font-size:.85rem;margin-right:.9rem;white-space:nowrap}
+
+/* single publication page */
+.back{font-size:.85rem;margin:0 0 1.2rem}
+.meta{color:var(--muted);font-size:.95rem;margin:.4rem 0 1.1rem;line-height:1.5}
+.links{margin:1rem 0 1.5rem}
+.links a{display:inline-block;margin-right:.9rem;font-size:.9rem}
+.abstract{text-align:justify}
+.versions{margin-top:1.6rem}
+.versions h2{font-size:1.05rem;margin-bottom:.5rem}
+.versions ul{list-style:none;padding:0;margin:0}
+.versions li{padding:.5rem 0;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+.versions .v-label{color:var(--ink)}
+.keywords{color:var(--muted);font-size:.88rem;margin-top:1.4rem;border-top:1px solid var(--line);padding-top:1rem}
+.keywords span{display:inline-block;background:#f3f3f3;border-radius:3px;padding:.05rem .45rem;margin:.1rem .15rem}
+
+footer{max-width:48rem;margin:3rem auto 4rem;padding:1rem 1.2rem 0;
+  border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}

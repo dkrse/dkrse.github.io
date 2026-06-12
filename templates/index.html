@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{SITE_TITLE}}</title>
+<meta name="description" content="{{SITE_DESCRIPTION}}">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main>
+  <header class="site-head">
+    <h1>{{AUTHOR}}</h1>
+    <p class="tagline">{{TAGLINE}}</p>
+    <p class="ids">
+      {{AFFILIATION}} ·
+      ORCID <a href="https://orcid.org/{{ORCID}}">{{ORCID}}</a> ·
+      <a href="https://scholar.google.com/citations?user=">Google&nbsp;Scholar</a>
+    </p>
+  </header>
+
+  <section class="pub-list">
+    <h2>Publications</h2>
+{{PUBLICATIONS}}
+  </section>
+</main>
+
+<footer>
+  Generated from <code>publications.toml</code> · {{COUNT}} publications
+</footer>
+</body>
+</html>

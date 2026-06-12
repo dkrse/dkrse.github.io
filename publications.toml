@@ -1,0 +1,486 @@
+# ============================================================================
+#  publications.toml — THE single place where you add / edit / remove papers.
+#  After editing, run:   python3 build.py
+#  (or just push — the GitHub Action rebuilds and deploys for you)
+# ============================================================================
+
+[site]
+author      = "Kristian Sestak"
+orcid       = "0009-0002-1455-5915"
+affiliation = "Independent Researcher"
+# URL where the site lives. User-site => https://<github-username>.github.io
+# !!! FILL IN your GitHub username:
+base_url    = "https://dkrse.github.io"
+title       = "Kristian Sestak — Publications"
+tagline     = "Independent researcher in mathematical & computational modelling — from structural inequality and social-hierarchy dynamics to machine learning, experimental number theory, and the foundations of information and software systems."
+description = "Publications of Kristian Sestak: formal and computational models spanning opportunity and inequality, organisational hierarchy, prime-gap statistics, machine learning for astronomy, and software-engineering visualization. Mostly open-access preprints on Zenodo / arXiv, with reproducible code and data."
+
+# ----------------------------------------------------------------------------
+#  Each paper = one [[publication]] block.
+#  Copy a block, change the values, done. Omit any field you don't have.
+#
+#  id        : short unique key (no spaces) -> page URL /p/<id>.html
+#  date      : YYYY/MM/DD  (or YYYY)
+#  pdf_url   : DIRECT URL to the text-searchable PDF on Zenodo / arXiv  (CRITICAL for Scholar)
+#  doi       : DOI, e.g. 10.5281/zenodo.XXXXX  (or 10.48550/arXiv.XXXX for arXiv)
+#  arxiv_id  : optional
+#  authors   : optional list, e.g. ["Surname, B.", "Sestak, K."] for co-authored
+#              papers. Omit for solo work — defaults to the site author + ORCID.
+#  code_url  : link to the GitHub repo with the computations (Jupyter / Python / C++ ...)
+#  keywords  : list of strings
+#  codes     : optional extra classifications (JEL, MSC...) — header text only
+#  preprint  : true/false  (shows a "preprint" badge)
+#  abstract  : multi-line text (may contain HTML such as <em>, <sub>)
+# ----------------------------------------------------------------------------
+
+# ===== Social-hierarchy dynamics =====
+
+[[publication]]
+id        = "candidacy-and-trigger"
+title     = "Candidacy and Trigger: A Two-Phase Empirical Model of Hierarchical Collapse"
+date      = "2026/05/18"
+doi       = "10.48550/arXiv.2605.18925"
+pdf_url   = "https://arxiv.org/pdf/2605.18925"
+arxiv_id  = "2605.18925"
+preprint  = true
+language  = "en"
+code_url  = ""
+keywords  = [
+  "hierarchical collapse", "ODE model", "panel data", "machine learning",
+  "AUC classification", "structural risk", "external shocks", "formal social theory",
+]
+abstract = """
+A dynamic ODE model of hierarchical asymmetry is examined across 260 countries (1960&ndash;2023)
+using multiple international data sources. Cross-sectional analysis gives partial support &mdash;
+trade openness and health metrics reduce within-country inequality &mdash; while the annual
+time-evolution equation underperforms. A machine-learning classifier achieves 0.91 cross-validated
+AUC in distinguishing 29 historical collapses from stable countries, revealing a two-phase pattern:
+a chronic risk profile visible roughly a decade before the event and an acute inflection three to
+five years prior. The paper rejects purely endogenous causes, proposing instead that structural
+factors identify vulnerable nations while external shocks determine the timing of collapse, and
+closes with forward-looking predictions for 2026&ndash;2036 evaluation.
+"""
+
+[[publication]]
+id        = "hierarchy-emergence-threshold"
+title     = "When Does Hierarchy Arise? A Threshold Argument for the Dominance of the Pyramid over Flat and Network Structures"
+date      = "2026/04/20"
+doi       = "10.5281/zenodo.19660419"
+pdf_url   = "https://zenodo.org/records/19660419/files/paper-01-en.pdf"
+preprint  = true
+language  = "en"
+code_url  = ""
+keywords  = [
+  "hierarchy", "organizational structure", "bounded rationality", "Dunbar's number",
+  "span of control", "Graicunas", "logarithmic depth", "emergence threshold", "formal social theory",
+]
+abstract = """
+At what population size do flat or network organisations spontaneously transform into hierarchies?
+Three independent mechanisms drive the shift: cognitive capacity limits (Dunbar's ~150 threshold),
+communication costs scaling as O(N&sup2;), and coordination demands under time pressure. A formula
+determines the critical organisational size at which hierarchical structure becomes necessary.
+Empirical testing against eight real organisations &mdash; from startups to Walmart, spanning nearly
+five orders of magnitude &mdash; shows hierarchical depth growing logarithmically with size, with an
+effective branching factor of approximately 6.7.
+"""
+
+[[publication]]
+id        = "hierarchy-extensions-part-2"
+title     = "Extensions of the Model of Hierarchical Structure: External Influence, Localisation of Power, and the Point of Irreversibility (Part II)"
+date      = "2026/04/20"
+doi       = "10.5281/zenodo.19659722"
+pdf_url   = "https://zenodo.org/records/19659722/files/paper-02-en.pdf"
+preprint  = true
+language  = "en"
+code_url  = ""
+keywords  = [
+  "hierarchical organisations", "institutional decay", "external influence",
+  "obedience and power", "irreversibility", "phase transitions", "tipping points",
+  "antifragility", "formal social theory",
+]
+abstract = """
+This second part extends the framework in which human hierarchical structures decay over finite
+time, through four expansions: active influence functions and external counter-pressure; power as a
+multiplicative function of lower-level obedience, introducing mass disobedience as a decay mechanism;
+formalisation of irreversibility points with early-warning signals; and psychological steering
+mechanisms that explain institutional stability. Real institutions are argued to survive through
+antifragile redundancy and silent adaptation rather than optimisation, while acknowledging
+computational limits, builder heuristics, and survivorship bias.
+"""
+
+[[publication]]
+id        = "hierarchy-decay-part-1"
+title     = "Hierarchical Structures Composed of Humans Inevitably Decay: A Formal Framework, Models, and a Proof (Part I)"
+date      = "2026/04/20"
+doi       = "10.5281/zenodo.19659405"
+pdf_url   = "https://zenodo.org/records/19659405/files/paper-01-en.pdf"
+preprint  = true
+language  = "en"
+code_url  = ""
+keywords  = [
+  "hierarchical organisations", "bounded rationality", "organisational decay",
+  "stochastic models", "continuous-time Markov chains", "coalition dynamics",
+  "iron law of oligarchy", "codification", "formal social theory",
+]
+abstract = """
+Formal mathematical models proving that human-based hierarchical organisations must eventually
+collapse. The framework combines finite human lifespans with bounded rationality to demonstrate
+decay through stochastic processes. Contributions include an explicit lifetime-bound formula, an
+analysis of internal decay via Markov chains, and an examination of coalition dynamics. Bounded
+rationality is argued to make hierarchy necessary for large-scale coordination yet to simultaneously
+guarantee eventual institutional failure; a central finding is that organisational longevity
+increases as decision-making shifts from individual judgement toward codified systems.
+"""
+
+# ===== Machine learning / astrophysics =====
+
+[[publication]]
+id        = "kan-stellar-classification"
+title     = "Kolmogorov–Arnold Networks as Implicit Regularizers: Noise Robustness and Interpretability for Stellar Classification"
+date      = "2026/05/27"
+doi       = "10.48550/arXiv.2605.29039"
+pdf_url   = "https://arxiv.org/pdf/2605.29039"
+arxiv_id  = "2605.29039"
+preprint  = true
+language  = "en"
+code_url  = ""
+keywords  = [
+  "Kolmogorov-Arnold networks", "implicit regularization", "noise robustness",
+  "stellar classification", "SDSS", "DESI", "B-splines", "SHAP", "interpretability",
+]
+abstract = """
+Do Kolmogorov&ndash;Arnold Networks (KAN) really resist noise better than MLPs and XGBoost when
+classifying stellar objects (star/galaxy/quasar) on 100,000 SDSS DR17 sources? An initial
++9-percentage-point advantage over MLP at SNR&nbsp;=&nbsp;5 vanishes once the baselines receive
+equivalent regularization: KAN's robustness stems from <em>implicit</em> regularization via B-spline
+activations rather than architecture. Results are confirmed on independent DESI samples; stars
+degrade faster than quasars under noise; KAN-native and SHAP feature rankings diverge sharply
+(Spearman &minus;0.37); colour features enhance KAN's relative benefit; and a hybrid router for
+uncertain predictions improves low-noise accuracy. KAN functions primarily as a convenient
+auto-regularizer with built-in interpretability.
+"""
+
+[[publication]]
+id        = "kan-photometric-noise"
+title     = "Does the Implicit-Regularizer View of Kolmogorov–Arnold Networks Survive Real Photometric Noise? A Heteroscedastic Stress-Test on SDSS DR17 and DESI DR1"
+date      = "2026/06/05"
+doi       = "10.5281/zenodo.20560558"
+pdf_url   = "https://zenodo.org/records/20560558/files/paper.pdf"
+preprint  = true
+language  = "en"
+code_url  = ""
+keywords  = [
+  "Kolmogorov-Arnold networks", "implicit regularization", "heteroscedastic noise",
+  "photometric uncertainty", "SDSS DR17", "DESI DR1", "stellar classification", "robustness",
+]
+abstract = """
+A stress-test of whether the implicit-regularizer view of Kolmogorov&ndash;Arnold Networks (KAN 2.0)
+survives <em>real</em>, heteroscedastic per-object photometric noise rather than the synthetic
+uniform-SNR noise of prior work. Using real per-object uncertainties for 73,302 SDSS DR17 objects
+(PSF magnitude errors) and 99,999 DESI DR1 objects (inverse-variance-derived errors), the
+equal-baseline comparison between KAN, a weight-decay-regularized MLP, an unregularized MLP, and
+XGBoost is re-run under three regimes: uncertainties as input features, per-object real-noise
+injection scaled by &alpha;, and magnitude-binned degradation. The equal-baseline equivalence holds.
+"""
+
+[[publication]]
+id        = "selection-over-speed"
+title     = "Selection over Speed: A Geometric Separation and a Falsifiable Program for Machine Problem-Solving Without Consciousness"
+date      = "2026/06/03"
+doi       = "10.5281/zenodo.20520960"
+pdf_url   = "https://zenodo.org/records/20520960/files/paper-en.pdf"
+preprint  = true
+language  = "en"
+code_url  = ""
+keywords  = [
+  "state-space search", "concentration of measure", "selection vs speed",
+  "high-dimensional separation", "statistical-computational gap", "tensor PCA",
+  "machine cognition", "verifiability", "learnability",
+]
+abstract = """
+Two linked, falsifiable claims about machine versus human problem solving. First &mdash; <em>selection
+over speed</em> &mdash; the AI advantage in structured domains is carried by the quality of selection
+among options under a fixed computational budget, not by raw speed, anchored by a geometric separation
+result (a globally informed algorithm provably succeeds where any bounded-memory local heuristic
+fails). Second, on objectively verifiable problems, solving does not require consciousness or a
+subconscious, formalized through a single-modality assumption. The paper lays out a program to test
+both claims.
+"""
+
+# ===== Information theory, cognition & essays =====
+
+[[publication]]
+id        = "communication-adaptive-receiver"
+title     = "Communication with an Adaptive Receiver Model: an Overview of a Conceptual Framework"
+date      = "2026/04/18"
+doi       = "10.5281/zenodo.19640796"
+pdf_url   = "https://zenodo.org/records/19640796/files/ver-01-en.pdf"
+preprint  = true
+language  = "en"
+code_url  = ""
+keywords  = [
+  "information theory", "rate-distortion", "receiver model", "Shannon channel",
+  "adaptive communication", "decision model",
+]
+abstract = """
+Classical Shannon theory treats the receiver as a passive decoder reconstructing the message with
+minimum distortion. A real receiver is not optimal: it has limited computation, its own world model,
+a decision goal, and an individual interaction history. This conceptual framework incorporates these
+explicitly through (i) an extension of the rate-distortion function by the receiver's model and goal,
+(ii) learning the receiver's parameters from shared communication history, and (iii) a probabilistic
+decision model expressing the cost of adaptation via a measurable function.
+"""
+
+[[publication]]
+id        = "adaptive-software-visualization"
+title     = "Adaptive Software Visualization: A Formal Model of the Text/Diagram Ratio with AI Delegation"
+date      = "2026/04/17"
+doi       = "10.5281/zenodo.19634880"
+pdf_url   = "https://zenodo.org/records/19634880/files/ver-01-en.pdf"
+preprint  = true
+language  = "en"
+code_url  = ""
+keywords  = [
+  "software visualization", "DIKW", "Shannon channel", "learning materials",
+  "text/diagram ratio", "LLM delegation", "position paper",
+]
+abstract = """
+A position paper proposing a formal framework for designing software-engineering learning materials
+that separates data transmission (a Shannon channel) from the reconstruction of information,
+knowledge and wisdom on the receiver's side (DIKW). A material is parametrized by
+(p,&nbsp;J,&nbsp;&sigma;,&nbsp;&eta;) &mdash; the diagram-to-text area ratio, linguistic simplicity,
+spatial integration, and the degree of detail delegated to an LLM. The utility E decomposes into
+three independently regulable components (transmission, reconstruction loss, load), and the optimal
+ratio p*&nbsp;&isin;&nbsp;[1.5,&nbsp;2.0] is derived as a prediction.
+"""
+
+[[publication]]
+id        = "godel-delusions-ai-essay"
+title     = "Gödel's Theorem, Delusions in Systems, and AI: Where Are We Heading? An Essay"
+date      = "2026/04/18"
+doi       = "10.5281/zenodo.19642594"
+pdf_url   = "https://zenodo.org/records/19642594/files/essay-en.pdf"
+preprint  = false
+language  = "en"
+code_url  = ""
+keywords  = [
+  "Gödel incompleteness", "halting problem", "many-valued logic", "quantum logic",
+  "paraconsistent logic", "artificial intelligence", "essay",
+]
+abstract = """
+An essay on the implications of Gödel's incompleteness theorems (1931) for delusions in formal
+systems, the limits of binary logic, and the trajectory of artificial intelligence. From a concise
+exposition of Gödel's theorems and Turing's halting problem, it identifies a universal pattern across
+logic, physics and biology: in sufficiently powerful systems, capability itself generates intrinsic
+limitation. It then asks whether binary logic is final &mdash; drawing an analogy with the classical-
+to-quantum transition &mdash; and surveys many-valued, quantum and paraconsistent logics.
+"""
+
+# ===== Experimental number theory — prime gaps =====
+
+[[publication]]
+id        = "wolf-prime-gap"
+title     = "An Empirical Subleading Correction to Wolf's Formula for Consecutive Prime Gaps"
+# date = the latest version (used for ordering). The canonical citation below
+# points to the original v1; all versions are listed in [[publication.versions]].
+date      = "2026/05/06"
+doi       = "10.5281/zenodo.19796305"
+pdf_url   = "https://zenodo.org/records/19796305/files/paper-en.pdf"
+preprint  = true
+language  = "en"
+code_url  = ""
+keywords  = [
+  "prime gaps", "Wolf's formula", "Hardy-Littlewood singular series", "ω(g)",
+  "model selection", "AIC", "BIC", "block bootstrap", "out-of-sample validation",
+  "computational number theory", "experimental mathematics", "reproducibility",
+]
+abstract = """
+A research line on a subleading correction to Wolf's 1998 heuristic for the count of consecutive
+prime gaps. The original preprint (v1) proposes a two-parameter, no-intercept correction
+R(g,N)&nbsp;&asymp;&nbsp;a&middot;&radic;&omega;(g)&nbsp;&minus;&nbsp;b&middot;log&nbsp;log&nbsp;N in the
+number of distinct prime divisors &omega;(g), fitted over N&nbsp;&isin;&nbsp;[10<sup>5</sup>,
+10<sup>13</sup>] (cross-validated median R&sup2;&nbsp;=&nbsp;0.92). Companion and large-scale runs
+extend the sieve to N&nbsp;&le;&nbsp;3&times;10<sup>14</sup> with frozen-fit out-of-sample
+R&sup2;&nbsp;=&nbsp;0.986 and release reproducible code under the MIT license. A final note then
+documents a <em>negative result</em>: refitting against the correct Wolf 2014 baseline (which differs
+by a factor of C<sub>g</sub> in the exponent) reduces the claimed amplitude by 78&ndash;95%, showing
+the earlier residual was largely an artefact of baseline misspecification; Wolf's drift parameters are
+reproduced against Cohen's 2024 tabulation to within 5&times;10<sup>&minus;5</sup>.
+"""
+
+  [[publication.versions]]
+  label   = "Note — extended range & negative result on the ω(g) correction"
+  date    = "2026/05/06"
+  doi     = "10.5281/zenodo.20048280"
+  pdf_url = "https://zenodo.org/records/20048280/files/paper.pdf"
+
+  [[publication.versions]]
+  label   = "Large-scale computation & out-of-sample validation (N ≤ 3×10¹⁴)"
+  date    = "2026/05/02"
+  doi     = "10.5281/zenodo.19975065"
+  pdf_url = "https://zenodo.org/records/19975065/files/paper-en.pdf"
+
+  [[publication.versions]]
+  label   = "Stability & out-of-sample validation (companion to v1)"
+  date    = "2026/05/01"
+  doi     = "10.5281/zenodo.19958063"
+  pdf_url = "https://zenodo.org/records/19958063/files/paper-en.pdf"
+
+  [[publication.versions]]
+  label   = "v1 — original empirical subleading correction"
+  date    = "2026/04/26"
+  doi     = "10.5281/zenodo.19796305"
+  pdf_url = "https://zenodo.org/records/19796305/files/paper-en.pdf"
+
+# ===== Environmental dominance =====
+
+[[publication]]
+id        = "environmental-dominance-limit"
+title     = "The Measurement Limit of Environmental Dominance: Why the Strong Thesis Can Be Neither Confirmed nor Refuted, and What Holds Instead"
+date      = "2026/06/07"
+doi       = "10.5281/zenodo.20579250"
+pdf_url   = "https://zenodo.org/records/20579250/files/paper.pdf"
+preprint  = true
+language  = "en"
+codes     = "JEL: D31, D63, J62, O15"
+code_url  = ""
+keywords  = [
+  "inequality of opportunity", "construct validity", "corporate control",
+  "beneficial ownership", "network position", "opacity", "reproducibility",
+]
+abstract = """
+Does the environment dominate capability? The claim is split into a <em>weak</em> reading (resource
+dispersion exceeds capability variance) and a <em>strong</em> reading (the environment causally
+dominates). Across multiple empirical probes the weak reading holds, but the strong reading cannot be
+measured with available data: a quasi-experimental analysis shows environmental factors displace
+outcomes, yet capability terms remain unrecoverable. Reframing dominance as network position, visible
+board interlocks follow log-normal rather than power-law distributions, while hidden offshore networks
+are heavy-tailed; beneficial-ownership recording is bimodal &mdash; nearly absent in public registries
+but nearly complete in leaked files &mdash; making opacity a structural property of the recording
+system rather than a jurisdiction-specific one.
+"""
+
+[[publication]]
+id        = "environmental-dominance-empirical"
+title     = "Empirical Confirmation of the Environmental-Dominance Inequality: A Direct Decomposition of Var(ln ρ_eff) Across Four Levels of Aggregation"
+date      = "2026/05/12"
+doi       = "10.48550/arXiv.2605.12037"
+pdf_url   = "https://arxiv.org/pdf/2605.12037"
+arxiv_id  = "2605.12037"
+preprint  = true
+language  = "en"
+code_url  = ""
+keywords  = [
+  "inequality", "variance decomposition", "Opportunity Atlas", "World Inequality Database",
+  "dominance ratio", "reproducible research", "social mobility",
+]
+abstract = """
+Empirical validation of the environmental-dominance inequality using three public datasets
+(Opportunity Atlas, World Bank GDP per capita PPP, World Inequality Database) at four aggregation
+levels: U.S. census tracts, between-country, within-country deciles, and the global pooled-individual
+distribution. The headline global variance of ln(&rho;<sub>eff</sub>) equals 4.33, yielding a
+dominance ratio between 27 and 134. The inequality holds with substantial margins globally and within
+country deciles, narrower margins between countries, and near-parity within homogenised U.S. census
+tracts. A 1990&ndash;2022 series shows global stability alongside a compositional shift toward
+within-country dispersion. The result is robust across income, infant mortality, and incarceration,
+but weakens for convergence-driven outcomes such as life expectancy. All computations use SHA-256
+hashed inputs in a reproducible framework with accompanying notebooks.
+"""
+
+[[publication]]
+id        = "environmental-dominance-framework"
+title     = "The Dominance of Environment over Entity's Capabilities"
+date      = "2026/04/18"
+doi       = "10.5281/zenodo.19643143"
+pdf_url   = "https://zenodo.org/records/19643143/files/zhrnutie-en.pdf"
+arxiv_id  = "2605.02985"
+preprint  = true
+language  = "en"
+codes     = "JEL: D31, D63, J62, O15 · MSC 2020: 91D10, 60C05, 91B15"
+code_url  = ""
+keywords  = [
+  "inequality of opportunity", "combinatorial asymmetry", "intergenerational mobility",
+  "meritocracy", "structural discrimination", "accessibility", "formal model",
+]
+abstract = """
+An analytical framework for the probability of individual success based on a single structural
+asymmetry between an entity's capacity to explore possibilities, <em>k</em>, and the size of the
+possibility space offered by the environment, <em>n</em>, where <em>k</em>&nbsp;&#8810;&nbsp;<em>n</em>.
+Introducing an effective density &rho;<sub>eff</sub> of favourable possibilities accessible to a given
+entity, success probability is derived as
+P&nbsp;&#8776;&nbsp;1&minus;(1&minus;&rho;<sub>eff</sub>)<sup><em>k</em></sup> and its variance
+decomposed across a population. While the elasticities &epsilon;<sub>&rho;</sub> and
+&epsilon;<sub><em>k</em></sub> are comparable, outcome variance is dominated by
+Var(ln&nbsp;&rho;<sub>eff</sub>) whenever it exceeds Var(ln&nbsp;<em>k</em>); a back-of-envelope
+calibration indicates this holds by two to three orders of magnitude. The framework unifies geographic
+inequality, intergenerational mobility, and accessibility-based discrimination as special cases of the
+narrowing of the accessible set A(E,P).
+"""
+
+# ===== Software engineering & visualization (earlier work, 2015) =====
+
+[[publication]]
+id        = "viz-critical-properties-databases"
+title     = "Visualization of Critical Properties of Databases of Information Systems"
+date      = "2015/01/22"
+doi       = "10.1109/SAMI.2015.7061860"
+pdf_url   = ""
+preprint  = false
+language  = "en"
+authors   = ["Sestak, Kristian", "Havlice, Zdenek"]
+codes     = "In: 2015 IEEE 13th International Symposium on Applied Machine Intelligence and Informatics (SAMI)"
+code_url  = ""
+keywords  = [
+  "software visualization", "3D visualization", "databases", "information systems",
+  "human-computer interaction",
+]
+abstract = """
+A visualization tool for presenting critical properties of information-system databases in a
+three-dimensional space, with co-author Zdenek Havlice. The work examines how three-dimensional
+visualizations of data affect the effectiveness with which structural and critical database
+properties are communicated to users. Published in the proceedings of the 2015 IEEE 13th
+International Symposium on Applied Machine Intelligence and Informatics (SAMI).
+"""
+
+[[publication]]
+id        = "agile-development-3d-data-modeling"
+title     = "Agile Development with 3D Data Modeling"
+date      = "2015/06/30"
+doi       = "10.15866/irecos.v10i6.6238"
+pdf_url   = ""
+preprint  = false
+language  = "en"
+authors   = ["Sestak, Kristian", "Havlice, Zdenek"]
+codes     = "International Review on Computers and Software (IRECOS), 10(6), 558–565"
+code_url  = ""
+keywords  = [
+  "agile development", "3D data modeling", "RISVICO", "software engineering",
+  "database analysis", "information systems",
+]
+abstract = """
+Introduces the agile method <strong>RISVICO</strong> (co-author Zdenek Havlice), aimed at improving
+collaboration between software engineers and database analysts through three-dimensional data
+modeling integrated into an agile development process. Published in the International Review on
+Computers and Software (IRECOS), vol. 10, no. 6.
+"""
+
+[[publication]]
+id        = "calculation-3d-modeling-chimneys"
+title     = "Calculation and Automatic 3D Modeling of Chimneys"
+date      = "2016/10/05"
+doi       = ""
+pdf_url   = ""
+preprint  = false
+language  = "en"
+authors   = ["Møller-Jacobsen, B.", "Sestak, K."]
+codes     = "In: International Conference on Industrial Chimneys and Cooling Towers (ICCT 2016), Rotterdam, NL, October 5–8, 2016 · icct-2016.org"
+code_url  = ""
+keywords  = [
+  "3D modeling", "industrial chimneys", "structural calculation",
+  "automatic modeling", "engineering software",
+]
+abstract = """
+A method for the structural calculation and automatic generation of three-dimensional models of
+industrial chimneys, co-authored with B. Møller-Jacobsen. Presented at the International Conference
+on Industrial Chimneys and Cooling Towers (ICCT 2016), Rotterdam, the Netherlands, 5–8 October 2016.
+"""
