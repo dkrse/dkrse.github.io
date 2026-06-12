@@ -27,17 +27,6 @@ ROOT = Path(__file__).resolve().parent
 DIST = ROOT / "dist"
 TPL = ROOT / "templates"
 
-# Topic key -> human label. Order defines the filter-tab order.
-TOPICS = [
-    ("inequality", "Inequality"),
-    ("hierarchy", "Hierarchy"),
-    ("number-theory", "Number theory"),
-    ("ml-ai", "Machine learning"),
-    ("information", "Information & cognition"),
-    ("software", "Software engineering"),
-]
-TOPIC_LABELS = dict(TOPICS)
-
 
 def fill(template: str, mapping: dict) -> str:
     """Replace {{KEY}} with values. Simple, no templating engine."""
@@ -58,6 +47,20 @@ def strip_html(text: str) -> str:
     t = re.sub(r"<[^>]+>", "", text or "")
     t = html.unescape(t)
     return re.sub(r"\s+", " ", t).strip()
+
+
+def excerpt(text: str, limit: int = 240) -> str:
+    """Short plain-text teaser for the index: first sentence(s) up to `limit` chars."""
+    t = strip_html(text)
+    if len(t) <= limit:
+        return html.escape(t)
+    cut = t[:limit]
+    # prefer to end on a sentence boundary, else on a word boundary
+    dot = cut.rfind(". ")
+    if dot >= limit * 0.5:
+        return html.escape(cut[: dot + 1])
+    sp = cut.rfind(" ")
+    return html.escape(cut[:sp] if sp > 0 else cut) + "&hellip;"
 
 
 def author_list(pub: dict, site: dict) -> list:
@@ -200,9 +203,9 @@ def links_block(pub: dict) -> str:
     d = doi_link(pub.get("doi", ""))
     if d:
         items.append(d)
-    code = pub.get("code_url", "")
-    if not is_placeholder(code):
-        items.append(f'<a href="{html.escape(code, quote=True)}">Code &amp; data (GitHub)</a>')
+    repo = pub.get("repo_url", "")
+    if not is_placeholder(repo):
+        items.append(f'<a href="{html.escape(repo, quote=True)}">Repository (code &amp; data)</a>')
     arxiv = pub.get("arxiv_id", "")
     if not is_placeholder(arxiv):
         items.append(f'<a href="https://arxiv.org/abs/{arxiv}">arXiv:{arxiv}</a>')
@@ -314,30 +317,9 @@ def header_links(site: dict) -> str:
         links.append(f'<a href="{html.escape(site["github"], quote=True)}">GitHub</a>')
     if site.get("arxiv"):
         links.append(f'<a href="{html.escape(site["arxiv"], quote=True)}">arXiv</a>')
+    if site.get("email"):
+        links.append(f'<a href="mailto:{html.escape(site["email"], quote=True)}">Email</a>')
     return " · ".join(links)
-
-
-def filter_controls(present: list) -> tuple:
-    """Return (radios+tabs HTML, generated CSS) for the CSS-only topic filter."""
-    keys = ["all"] + [k for k, _ in TOPICS if k in present]
-    radios = "".join(
-        f'<input type="radio" name="topic" id="f-{k}" class="filter"{" checked" if k=="all" else ""}>\n'
-        for k in keys
-    )
-    labels = "".join(
-        f'<label for="f-{k}">{html.escape("All" if k=="all" else TOPIC_LABELS[k])}</label>'
-        for k in keys
-    )
-    tabs = radios + f'  <nav class="tabs">{labels}</nav>'
-    css_rules = ["#f-all:checked ~ .pub-list .pub{display:block}"]
-    for k in keys:
-        if k == "all":
-            continue
-        css_rules.append(f"#f-{k}:checked ~ .pub-list .pub{{display:none}}")
-        css_rules.append(f"#f-{k}:checked ~ .pub-list .pub.topic-{k}{{display:block}}")
-    for k in keys:
-        css_rules.append(f"#f-{k}:checked ~ .tabs label[for=f-{k}]{{background:var(--accent);color:#fff;border-color:var(--accent)}}")
-    return tabs, "\n".join(css_rules)
 
 
 def build():
@@ -405,37 +387,44 @@ def build():
             idx_links.append(f'<a href="{html.escape(pub["pdf_url"], quote=True)}">PDF</a>')
         if not is_placeholder(pub.get("doi", "")):
             idx_links.append(f'<a href="https://doi.org/{pub["doi"]}">DOI</a>')
-        if not is_placeholder(pub.get("code_url", "")):
-            idx_links.append(f'<a href="{html.escape(pub["code_url"], quote=True)}">Code</a>')
+        if not is_placeholder(pub.get("repo_url", "")):
+            idx_links.append(f'<a href="{html.escape(pub["repo_url"], quote=True)}">Repository</a>')
 
-        topic = pub.get("topic", "other")
         cards.append(
-            f'    <article class="pub topic-{html.escape(topic)}">\n'
+            '    <article class="pub">\n'
             f'      <h3><a href="p/{pid}.html">{html.escape(pub["title"])}</a></h3>\n'
             f'      <p class="m">{html.escape(", ".join(author_list(pub, site)))} · {" · ".join(meta_bits)}</p>\n'
-            f'      <p class="excerpt">{pub.get("abstract", "").strip()}</p>\n'
+            f'      <p class="excerpt">{excerpt(pub.get("abstract", ""))}</p>\n'
             f'      <p class="pub-links">{" ".join(idx_links)}</p>\n'
             '    </article>'
         )
-
-    present = {p.get("topic") for p in pubs}
-    tabs, filter_css = filter_controls(present)
 
     index = fill(idx_tpl, {
         "SITE_TITLE": html.escape(site["title"]),
         "SITE_DESCRIPTION": html.escape(site["description"]),
         "OG_META": og_meta(site["title"], site["description"], base + "/", "website", site),
         "JSONLD": jsonld_person(site),
-        "FILTER_CSS": filter_css,
         "AUTHOR": html.escape(site["author"]),
         "TAGLINE": html.escape(site.get("tagline", "")),
         "AFFILIATION": html.escape(site["affiliation"]),
         "HEADER_LINKS": header_links(site),
-        "FILTER_TABS": tabs,
+        "ABOUT": html.escape(strip_html(site.get("about", ""))),
         "PUBLICATIONS": "\n".join(cards),
         "COUNT": len(pubs),
     })
     (DIST / "index.html").write_text(index, encoding="utf-8")
+
+    # custom 404 for GitHub Pages
+    (DIST / "404.html").write_text(
+        '<!DOCTYPE html>\n<html lang="en"><head><meta charset="utf-8">\n'
+        '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+        f'<title>Page not found — {html.escape(site["author"])}</title>\n'
+        '<link rel="stylesheet" href="/assets/style.css"></head>\n'
+        '<body><main><h1>404 — page not found</h1>\n'
+        '<p>That page does not exist. <a href="/">Back to all publications &rarr;</a></p>\n'
+        '</main></body></html>\n',
+        encoding="utf-8",
+    )
 
     # sitemap.xml + robots.txt
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
@@ -449,7 +438,7 @@ def build():
     )
 
     print(f"✓ Built {len(pubs)} publications -> {DIST}")
-    print(f"  + sitemap.xml ({len(urls)} URLs), robots.txt, JSON-LD, OpenGraph, BibTeX, topic filter")
+    print(f"  + sitemap.xml ({len(urls)} URLs), robots.txt, JSON-LD, OpenGraph, BibTeX")
     if warnings:
         print("\nWarnings (the site was still generated):")
         print("\n".join(warnings))

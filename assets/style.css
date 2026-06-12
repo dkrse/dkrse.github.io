@@ -17,15 +17,11 @@ h2{font-size:1.2rem;margin:2rem 0 .6rem}
 .tagline{color:var(--muted);font-style:italic;margin:.2rem 0 .6rem}
 .ids{color:var(--muted);font-size:.92rem;margin:0}
 
+/* about */
+.about{margin:1.4rem 0 0;text-align:justify}
+
 /* section heading */
 .pub-h{margin:1.8rem 0 .6rem}
-
-/* CSS-only topic filter */
-.filter{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
-.tabs{display:flex;flex-wrap:wrap;gap:.4rem;margin:.2rem 0 1rem}
-.tabs label{font-size:.82rem;padding:.2rem .7rem;border:1px solid var(--line);border-radius:999px;
-  color:var(--muted);cursor:pointer;user-select:none}
-.tabs label:hover{border-color:var(--accent);color:var(--accent)}
 
 /* publication list */
 .pub-list h2{margin-top:0}

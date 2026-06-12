@@ -26,7 +26,7 @@ wants.
 1. Open `publications.toml`.
 2. Copy a `[[publication]]` block and change the values (or edit/delete an
    existing one). Key fields: `pdf_url` (direct Zenodo PDF URL — **critical for
-   Scholar**), `doi`, `code_url` (GitHub repo with Jupyter/Python/C++),
+   Scholar**), `doi`, `repo_url` (GitHub repo with Jupyter/Python/C++),
    `abstract`, `keywords`.
 3. Run `python3 build.py`.
 4. Push. The GitHub Action rebuilds and deploys.
