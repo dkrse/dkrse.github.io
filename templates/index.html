@@ -5,22 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{SITE_TITLE}}</title>
 <meta name="description" content="{{SITE_DESCRIPTION}}">
+
+<!-- ==== Open Graph / Twitter ==== -->
+{{OG_META}}
+
 <link rel="stylesheet" href="assets/style.css">
+<style>
+{{FILTER_CSS}}
+</style>
+{{JSONLD}}
 </head>
 <body>
 <main>
   <header class="site-head">
     <h1>{{AUTHOR}}</h1>
     <p class="tagline">{{TAGLINE}}</p>
-    <p class="ids">
-      {{AFFILIATION}} ·
-      ORCID <a href="https://orcid.org/{{ORCID}}">{{ORCID}}</a> ·
-      <a href="https://scholar.google.com/citations?user=">Google&nbsp;Scholar</a>
-    </p>
+    <p class="ids">{{AFFILIATION}} · {{HEADER_LINKS}}</p>
   </header>
 
+  <h2 class="pub-h">Publications</h2>
+
+{{FILTER_TABS}}
+
   <section class="pub-list">
-    <h2>Publications</h2>
 {{PUBLICATIONS}}
   </section>
 </main>

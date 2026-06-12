@@ -17,6 +17,16 @@ h2{font-size:1.2rem;margin:2rem 0 .6rem}
 .tagline{color:var(--muted);font-style:italic;margin:.2rem 0 .6rem}
 .ids{color:var(--muted);font-size:.92rem;margin:0}
 
+/* section heading */
+.pub-h{margin:1.8rem 0 .6rem}
+
+/* CSS-only topic filter */
+.filter{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.tabs{display:flex;flex-wrap:wrap;gap:.4rem;margin:.2rem 0 1rem}
+.tabs label{font-size:.82rem;padding:.2rem .7rem;border:1px solid var(--line);border-radius:999px;
+  color:var(--muted);cursor:pointer;user-select:none}
+.tabs label:hover{border-color:var(--accent);color:var(--accent)}
+
 /* publication list */
 .pub-list h2{margin-top:0}
 article.pub{border-top:1px solid var(--line);padding:1.1rem 0}
@@ -41,6 +51,12 @@ article.pub .excerpt{margin:.4rem 0 .6rem;text-align:justify}
 .versions ul{list-style:none;padding:0;margin:0}
 .versions li{padding:.5rem 0;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
 .versions .v-label{color:var(--ink)}
+/* cite / BibTeX */
+.cite{margin-top:1.6rem}
+.cite summary{cursor:pointer;font-size:.9rem;color:var(--accent);font-weight:600}
+.cite pre{margin:.6rem 0 0;padding:.8rem 1rem;background:#f7f7f7;border:1px solid var(--line);
+  border-radius:4px;font-size:.8rem;line-height:1.45;overflow-x:auto;white-space:pre;color:var(--ink)}
+
 .keywords{color:var(--muted);font-size:.88rem;margin-top:1.4rem;border-top:1px solid var(--line);padding-top:1rem}
 .keywords span{display:inline-block;background:#f3f3f3;border-radius:3px;padding:.05rem .45rem;margin:.1rem .15rem}
 

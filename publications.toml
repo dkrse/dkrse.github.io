@@ -11,8 +11,12 @@ affiliation = "Independent Researcher"
 # URL where the site lives. User-site => https://<github-username>.github.io
 # !!! FILL IN your GitHub username:
 base_url    = "https://dkrse.github.io"
+# Profile links shown in the header (leave "" to hide a link):
+github      = "https://github.com/dkrse"
+scholar     = ""   # paste your Google Scholar profile URL once created
+arxiv       = ""   # optional arXiv author URL, e.g. https://arxiv.org/a/sestak_k_1
 title       = "Kristian Sestak — Publications"
-tagline     = "Independent researcher in mathematical & computational modelling — from structural inequality and social-hierarchy dynamics to machine learning, experimental number theory, and the foundations of information and software systems."
+tagline     = "Independent researcher in mathematical and computational modelling, spanning structural inequality and social-hierarchy dynamics, machine learning, experimental number theory, and the foundations of information and software systems."
 description = "Publications of Kristian Sestak: formal and computational models spanning opportunity and inequality, organisational hierarchy, prime-gap statistics, machine learning for astronomy, and software-engineering visualization. Mostly open-access preprints on Zenodo / arXiv, with reproducible code and data."
 
 # ----------------------------------------------------------------------------
@@ -37,6 +41,7 @@ description = "Publications of Kristian Sestak: formal and computational models 
 
 [[publication]]
 id        = "candidacy-and-trigger"
+topic     = "hierarchy"
 title     = "Candidacy and Trigger: A Two-Phase Empirical Model of Hierarchical Collapse"
 date      = "2026/05/18"
 doi       = "10.48550/arXiv.2605.18925"
@@ -44,7 +49,7 @@ pdf_url   = "https://arxiv.org/pdf/2605.18925"
 arxiv_id  = "2605.18925"
 preprint  = true
 language  = "en"
-code_url  = ""
+code_url  = "https://github.com/dkrse/hierarchical-collapse-candidacy-trigger"
 keywords  = [
   "hierarchical collapse", "ODE model", "panel data", "machine learning",
   "AUC classification", "structural risk", "external shocks", "formal social theory",
@@ -63,6 +68,7 @@ closes with forward-looking predictions for 2026&ndash;2036 evaluation.
 
 [[publication]]
 id        = "hierarchy-emergence-threshold"
+topic     = "hierarchy"
 title     = "When Does Hierarchy Arise? A Threshold Argument for the Dominance of the Pyramid over Flat and Network Structures"
 date      = "2026/04/20"
 doi       = "10.5281/zenodo.19660419"
@@ -86,6 +92,7 @@ effective branching factor of approximately 6.7.
 
 [[publication]]
 id        = "hierarchy-extensions-part-2"
+topic     = "hierarchy"
 title     = "Extensions of the Model of Hierarchical Structure: External Influence, Localisation of Power, and the Point of Irreversibility (Part II)"
 date      = "2026/04/20"
 doi       = "10.5281/zenodo.19659722"
@@ -110,6 +117,7 @@ computational limits, builder heuristics, and survivorship bias.
 
 [[publication]]
 id        = "hierarchy-decay-part-1"
+topic     = "hierarchy"
 title     = "Hierarchical Structures Composed of Humans Inevitably Decay: A Formal Framework, Models, and a Proof (Part I)"
 date      = "2026/04/20"
 doi       = "10.5281/zenodo.19659405"
@@ -136,6 +144,7 @@ increases as decision-making shifts from individual judgement toward codified sy
 
 [[publication]]
 id        = "kan-stellar-classification"
+topic     = "ml-ai"
 title     = "Kolmogorov–Arnold Networks as Implicit Regularizers: Noise Robustness and Interpretability for Stellar Classification"
 date      = "2026/05/27"
 doi       = "10.48550/arXiv.2605.29039"
@@ -143,7 +152,7 @@ pdf_url   = "https://arxiv.org/pdf/2605.29039"
 arxiv_id  = "2605.29039"
 preprint  = true
 language  = "en"
-code_url  = ""
+code_url  = "https://github.com/dkrse/kan-vs-mlp-stellar-classification"
 keywords  = [
   "Kolmogorov-Arnold networks", "implicit regularization", "noise robustness",
   "stellar classification", "SDSS", "DESI", "B-splines", "SHAP", "interpretability",
@@ -162,13 +171,14 @@ auto-regularizer with built-in interpretability.
 
 [[publication]]
 id        = "kan-photometric-noise"
+topic     = "ml-ai"
 title     = "Does the Implicit-Regularizer View of Kolmogorov–Arnold Networks Survive Real Photometric Noise? A Heteroscedastic Stress-Test on SDSS DR17 and DESI DR1"
 date      = "2026/06/05"
 doi       = "10.5281/zenodo.20560558"
 pdf_url   = "https://zenodo.org/records/20560558/files/paper.pdf"
 preprint  = true
 language  = "en"
-code_url  = ""
+code_url  = "https://github.com/dkrse/kan-real-photometric-noise"
 keywords  = [
   "Kolmogorov-Arnold networks", "implicit regularization", "heteroscedastic noise",
   "photometric uncertainty", "SDSS DR17", "DESI DR1", "stellar classification", "robustness",
@@ -185,13 +195,14 @@ injection scaled by &alpha;, and magnitude-binned degradation. The equal-baselin
 
 [[publication]]
 id        = "selection-over-speed"
+topic     = "ml-ai"
 title     = "Selection over Speed: A Geometric Separation and a Falsifiable Program for Machine Problem-Solving Without Consciousness"
 date      = "2026/06/03"
 doi       = "10.5281/zenodo.20520960"
 pdf_url   = "https://zenodo.org/records/20520960/files/paper-en.pdf"
 preprint  = true
 language  = "en"
-code_url  = ""
+code_url  = "https://github.com/dkrse/selection-over-speed"
 keywords  = [
   "state-space search", "concentration of measure", "selection vs speed",
   "high-dimensional separation", "statistical-computational gap", "tensor PCA",
@@ -211,6 +222,7 @@ both claims.
 
 [[publication]]
 id        = "communication-adaptive-receiver"
+topic     = "information"
 title     = "Communication with an Adaptive Receiver Model: an Overview of a Conceptual Framework"
 date      = "2026/04/18"
 doi       = "10.5281/zenodo.19640796"
@@ -233,6 +245,7 @@ decision model expressing the cost of adaptation via a measurable function.
 
 [[publication]]
 id        = "adaptive-software-visualization"
+topic     = "information"
 title     = "Adaptive Software Visualization: A Formal Model of the Text/Diagram Ratio with AI Delegation"
 date      = "2026/04/17"
 doi       = "10.5281/zenodo.19634880"
@@ -256,6 +269,7 @@ ratio p*&nbsp;&isin;&nbsp;[1.5,&nbsp;2.0] is derived as a prediction.
 
 [[publication]]
 id        = "godel-delusions-ai-essay"
+topic     = "information"
 title     = "Gödel's Theorem, Delusions in Systems, and AI: Where Are We Heading? An Essay"
 date      = "2026/04/18"
 doi       = "10.5281/zenodo.19642594"
@@ -280,6 +294,7 @@ to-quantum transition &mdash; and surveys many-valued, quantum and paraconsisten
 
 [[publication]]
 id        = "wolf-prime-gap"
+topic     = "number-theory"
 title     = "An Empirical Subleading Correction to Wolf's Formula for Consecutive Prime Gaps"
 # date = the latest version (used for ordering). The canonical citation below
 # points to the original v1; all versions are listed in [[publication.versions]].
@@ -288,7 +303,7 @@ doi       = "10.5281/zenodo.19796305"
 pdf_url   = "https://zenodo.org/records/19796305/files/paper-en.pdf"
 preprint  = true
 language  = "en"
-code_url  = ""
+code_url  = "https://github.com/dkrse/math-01-wolf"
 keywords  = [
   "prime gaps", "Wolf's formula", "Hardy-Littlewood singular series", "ω(g)",
   "model selection", "AIC", "BIC", "block bootstrap", "out-of-sample validation",
@@ -336,6 +351,7 @@ reproduced against Cohen's 2024 tabulation to within 5&times;10<sup>&minus;5</su
 
 [[publication]]
 id        = "environmental-dominance-limit"
+topic     = "inequality"
 title     = "The Measurement Limit of Environmental Dominance: Why the Strong Thesis Can Be Neither Confirmed nor Refuted, and What Holds Instead"
 date      = "2026/06/07"
 doi       = "10.5281/zenodo.20579250"
@@ -343,7 +359,7 @@ pdf_url   = "https://zenodo.org/records/20579250/files/paper.pdf"
 preprint  = true
 language  = "en"
 codes     = "JEL: D31, D63, J62, O15"
-code_url  = ""
+code_url  = "https://github.com/dkrse/environmental-dominance-demarcation"
 keywords  = [
   "inequality of opportunity", "construct validity", "corporate control",
   "beneficial ownership", "network position", "opacity", "reproducibility",
@@ -362,6 +378,7 @@ system rather than a jurisdiction-specific one.
 
 [[publication]]
 id        = "environmental-dominance-empirical"
+topic     = "inequality"
 title     = "Empirical Confirmation of the Environmental-Dominance Inequality: A Direct Decomposition of Var(ln ρ_eff) Across Four Levels of Aggregation"
 date      = "2026/05/12"
 doi       = "10.48550/arXiv.2605.12037"
@@ -369,7 +386,7 @@ pdf_url   = "https://arxiv.org/pdf/2605.12037"
 arxiv_id  = "2605.12037"
 preprint  = true
 language  = "en"
-code_url  = ""
+code_url  = "https://github.com/dkrse/environment-dominance"
 keywords  = [
   "inequality", "variance decomposition", "Opportunity Atlas", "World Inequality Database",
   "dominance ratio", "reproducible research", "social mobility",
@@ -389,6 +406,7 @@ hashed inputs in a reproducible framework with accompanying notebooks.
 
 [[publication]]
 id        = "environmental-dominance-framework"
+topic     = "inequality"
 title     = "The Dominance of Environment over Entity's Capabilities"
 date      = "2026/04/18"
 doi       = "10.5281/zenodo.19643143"
@@ -421,6 +439,7 @@ narrowing of the accessible set A(E,P).
 
 [[publication]]
 id        = "viz-critical-properties-databases"
+topic     = "software"
 title     = "Visualization of Critical Properties of Databases of Information Systems"
 date      = "2015/01/22"
 doi       = "10.1109/SAMI.2015.7061860"
@@ -444,6 +463,7 @@ International Symposium on Applied Machine Intelligence and Informatics (SAMI).
 
 [[publication]]
 id        = "agile-development-3d-data-modeling"
+topic     = "software"
 title     = "Agile Development with 3D Data Modeling"
 date      = "2015/06/30"
 doi       = "10.15866/irecos.v10i6.6238"
@@ -466,6 +486,7 @@ Computers and Software (IRECOS), vol. 10, no. 6.
 
 [[publication]]
 id        = "calculation-3d-modeling-chimneys"
+topic     = "software"
 title     = "Calculation and Automatic 3D Modeling of Chimneys"
 date      = "2016/10/05"
 doi       = ""
