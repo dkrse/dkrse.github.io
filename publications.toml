@@ -342,9 +342,9 @@ reproduced against Cohen's 2024 tabulation to within 5&times;10<sup>&minus;5</su
 [[publication]]
 id        = "environmental-dominance-limit"
 title     = "The Measurement Limit of Environmental Dominance: Why the Strong Thesis Can Be Neither Confirmed nor Refuted, and What Holds Instead"
-date      = "2026/06/07"
-doi       = "10.5281/zenodo.20579250"
-pdf_url   = "https://zenodo.org/records/20579250/files/paper.pdf"
+date      = "2026/06/12"
+doi       = "10.5281/zenodo.20671035"  
+pdf_url   = "https://zenodo.org/records/20671035/files/paper.pdf"
 preprint  = true
 language  = "en"
 repo_url  = "https://github.com/dkrse/environmental-dominance-demarcation"
