@@ -23,7 +23,7 @@ gaps, and machine learning for astronomy. Most of my work is released as open-ac
 reproducible code and data on Zenodo, arXiv and GitHub. I work as an independent researcher.
 """
 title       = "Kristian Sestak — Publications"
-tagline     = "Independent researcher in mathematical and computational modelling, spanning structural inequality and social-hierarchy dynamics, machine learning, experimental number theory, and the foundations of information and software systems."
+tagline     = "Independent researcher in mathematical and computational modelling."
 description = "Publications of Kristian Sestak: formal and computational models spanning opportunity and inequality, organisational hierarchy, prime-gap statistics, machine learning for astronomy, and software-engineering visualization. Mostly open-access preprints on Zenodo / arXiv, with reproducible code and data."
 
 # ----------------------------------------------------------------------------
