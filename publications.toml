@@ -16,14 +16,8 @@ github      = "https://github.com/dkrse"
 scholar     = ""   # paste your Google Scholar profile URL once created
 arxiv       = ""   # optional arXiv author URL, e.g. https://arxiv.org/a/sestak_k_1
 email       = "kristian.sestak@gmail.com"
-about       = """
-I build mathematical and computational models of how structure shapes outcomes — across the
-inequality of opportunity, the dynamics and decay of social hierarchies, the statistics of prime
-gaps, and machine learning for astronomy. Most of my work is released as open-access preprints with
-reproducible code and data on Zenodo, arXiv and GitHub. I work as an independent researcher.
-"""
 title       = "Kristian Sestak — Publications"
-tagline     = "Independent researcher in mathematical and computational modelling."
+tagline     = "Independent researcher in mathematical and computational modelling, spanning structural inequality and social-hierarchy dynamics, machine learning, experimental number theory, and the foundations of information and software systems."
 description = "Publications of Kristian Sestak: formal and computational models spanning opportunity and inequality, organisational hierarchy, prime-gap statistics, machine learning for astronomy, and software-engineering visualization. Mostly open-access preprints on Zenodo / arXiv, with reproducible code and data."
 
 # ----------------------------------------------------------------------------
@@ -440,7 +434,7 @@ preprint  = false
 language  = "en"
 authors   = ["Sestak, Kristian", "Havlice, Zdenek"]
 codes     = "In: 2015 IEEE 13th International Symposium on Applied Machine Intelligence and Informatics (SAMI)"
-repo_url  = "https://github.com/dkrse/software-visualization"
+repo_url  = ""
 keywords  = [
   "software visualization", "3D visualization", "databases", "information systems",
   "human-computer interaction",

@@ -408,7 +408,6 @@ def build():
         "TAGLINE": html.escape(site.get("tagline", "")),
         "AFFILIATION": html.escape(site["affiliation"]),
         "HEADER_LINKS": header_links(site),
-        "ABOUT": html.escape(strip_html(site.get("about", ""))),
         "PUBLICATIONS": "\n".join(cards),
         "COUNT": len(pubs),
     })
