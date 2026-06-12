@@ -1,15 +1,17 @@
 # Personal publications site
 
 Dynamically editable, statically generated personal publications site.
-You edit a single data file → static HTML with Google Scholar (`citation_*`)
+You edit a single data file → static HTML with citation (`citation_*`)
 meta tags is generated → it is hosted for free on GitHub Pages.
+
+**Author:** krse
 
 ## Why this way
 
-The Google Scholar crawler does **not** run JavaScript reliably. An SPA
+Academic indexing crawlers do **not** run JavaScript reliably. An SPA
 (React/Vue) would break indexing. The solution: **dynamic to edit, static to
-serve.** The citation meta tags live in the finished HTML, exactly as Scholar
-wants.
+serve.** The citation meta tags live in the finished HTML, exactly as indexers
+want.
 
 ## Files
 
@@ -26,7 +28,7 @@ wants.
 1. Open `publications.toml`.
 2. Copy a `[[publication]]` block and change the values (or edit/delete an
    existing one). Key fields: `pdf_url` (direct Zenodo PDF URL — **critical for
-   Scholar**), `doi`, `repo_url` (GitHub repo with Jupyter/Python/C++),
+   indexing**), `doi`, `repo_url` (GitHub repo with Jupyter/Python/C++),
    `abstract`, `keywords`.
 3. Run `python3 build.py`.
 4. Push. The GitHub Action rebuilds and deploys.
@@ -53,13 +55,26 @@ else (no PDFs, LaTeX, figures).
 4. The workflow `.github/workflows/deploy.yml` builds `dist/` and deploys it.
    The site goes live at `https://<username>.github.io/`.
 
-## Google Scholar
+## Indexing
+
+The generated `citation_*` meta tags (Highwire / Dublin Core) are read by
+several academic indexers, not just one:
+
+- **Semantic Scholar**, **OpenAlex**, **CORE**, **BASE**, **Scilit**,
+  **Lens.org** — all crawl public pages with valid citation tags on their own
+  (usually weeks after deployment).
+
+Notes:
 
 - `citation_pdf_url` must point to a public, text-searchable PDF (a Zenodo PDF
-  qualifies). Without it Scholar won't index the full text — `build.py` warns
-  you when it's missing.
-- After deployment (optional) submit the root:
-  <https://scholar.google.com/intl/en/scholar/inclusion.html>. Scholar also
-  crawls public pages with valid citation tags on its own (usually weeks).
-- Create a **Google Scholar author profile** and add your publications so
-  citations attach to you.
+  qualifies). Without it indexers won't pick up the full text — `build.py`
+  warns you when it's missing.
+- Because each paper has a **Zenodo DOI**, its metadata also propagates
+  automatically through **DataCite** (and **OAI-PMH**), which OpenAlex, CORE
+  and BASE ingest directly — independent of this site being crawled.
+- Link your **ORCID** in `publications.toml` so records attach to your profile
+  across these systems.
+
+## License
+
+MIT — see [`LICENSE`](LICENSE).
