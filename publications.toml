@@ -41,6 +41,45 @@ description = "Publications of Kristian Sestak: formal and computational models 
 # ===== Social-hierarchy dynamics =====
 
 [[publication]]
+id        = "position-amplifier"
+title     = "An Amplifier of Position, Not Competence: Why Hierarchy Emerges, What We Pay for It to Hold, and Why Its Cost Cannot Be Settled"
+date      = "2026/06/13"
+doi       = "10.5281/zenodo.20681184"
+pdf_url   = "https://zenodo.org/records/20681184/files/paper-en.pdf"
+preprint  = true
+language  = "en"
+repo_url  = "https://github.com/dkrse/position-amplifier"
+codes     = "JEL: D31, D63, D71, L14"
+keywords  = [
+  "hierarchy", "status", "positional power", "multiplicative cascade",
+  "preferential attachment", "power laws", "Kesten process", "tail index",
+  "cumulative advantage", "Matthew effect", "reproducibility",
+]
+abstract = """
+A prior trilogy established that individual outcomes are dominated by the dispersion of the
+environment rather than of capability (Var(ln&nbsp;&rho;<sub>eff</sub>)&nbsp;&#8811;&nbsp;Var(ln&nbsp;<em>k</em>),
+dominance ratio R&nbsp;&isin;&nbsp;[27,&nbsp;134]) but not where that dispersion comes from. This paper
+supplies the mechanism: hierarchy as an amplifier &mdash; a multiplicative cascade that turns tiny,
+often capability-irrelevant initial differences into the large positional dispersion the trilogy
+measured, so that R becomes an output of structure rather than a fact about people. The feedback
+f(S) is microfounded in Gould's deference model (linear at the bottom, saturating at the top), the
+Kesten reset that creates the heavy tail is identified with Boehm's reverse-dominance insurance, and
+the tail index is pinned in closed form (confirmed by a Clauset MLE). The calibrated amplifier
+reproduces R at all four aggregation levels and requires a near-random-walk between-environment
+process, with depth anchored independently from Maddison GDP divergence and income mobility so R is
+predicted, not fitted. On the raw ICIJ Offshore Leaks officer network the predicted heavy tail holds
+(global &alpha;&nbsp;&#8776;&nbsp;2.25), but no concentration metric tracks recording opacity across
+jurisdictions &mdash; a negative result that vindicates the demarcation paper, since the quantity that
+would test the lever is hidden by construction. On 113,895 closed GitHub pull requests, position
+multiplies the merge odds 3&ndash;7&times; at fixed diff size; a within-author design bounds the
+position premium at 12.6&nbsp;pp, and a promotion holding author and project fixed still finds
+acceptance rising +4.1&nbsp;pp at unchanged proposal size, though even it cannot fully separate the
+badge from the competence that travels with it. The amplifier's gains are continuous and visible while
+its costs are rare, delayed and hidden, so hierarchy always appears beneficial and its net cost cannot
+be honestly settled.
+"""
+
+[[publication]]
 id        = "candidacy-and-trigger"
 title     = "Candidacy and Trigger: A Two-Phase Empirical Model of Hierarchical Collapse"
 date      = "2026/05/18"
