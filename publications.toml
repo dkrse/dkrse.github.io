@@ -41,6 +41,44 @@ description = "Publications of Kristian Sestak: formal and computational models 
 # ===== Social-hierarchy dynamics =====
 
 [[publication]]
+id        = "symmetry-breaking-amplifier"
+title     = "Breaking Symmetry, Not Choosing Direction: A Model of Hierarchy as a Position Amplifier, and What It Can and Cannot Recover"
+date      = "2026/07/13"
+doi       = "10.31235/osf.io/axvmp_v2"
+pdf_url   = "https://osf.io/axvmp/download"
+preprint  = true
+language  = "en"
+codes     = "SocArXiv"
+keywords  = [
+  "hierarchy", "symmetry breaking", "position amplifier", "multiplicative cascade",
+  "cumulative advantage", "Matthew effect", "identifiability", "non-ergodicity",
+  "early-lead law", "martingale",
+]
+abstract = """
+Hierarchies form even among near-equals. Their inequality is usually read as meritocracy sorting on
+ability, as a coordination device a group needs, or as cumulative advantage in which leads compound.
+We give a falsifiable normal form for one further route, a symmetry-breaking amplifier of position:
+a multiplicative cascade that turns tiny, often capability-irrelevant differences into a large
+positional dispersion, Var(ln&nbsp;&rho;<sub>eff</sub>)&nbsp;&#8811;&nbsp;Var(ln&nbsp;<em>k</em>), where
+<em>k</em> is capability and &rho;<sub>eff</sub> the density of favourable possibilities the environment
+makes accessible. On top of the normal form we draw the line the title names, between what such a
+hierarchy's trajectory can and cannot recover about its own origin. The dynamics &mdash; whether the
+process amplifies or merely diffuses &mdash; are identifiable from a trajectory, fixed by three results:
+a necessity theorem, a non-monotone dispersion-maximising gain that plain cumulative advantage does not
+produce, and a &radic;&tau; early-lead law that separates amplification from diffusion. The seed &mdash;
+whether what got inflated was real skill or amplified noise &mdash; is <em>not</em> identifiable: we prove
+a non-identifiability theorem, since the map depends on capability and position only through their sum, so
+no statistic of the trajectory recovers the split. Identifying it requires an exogenous handle on
+capability that does not pass through the amplifier, returning not a verdict but a manufactured share,
+R&nbsp;=&nbsp;1&nbsp;&minus;&nbsp;corr<sup>2</sup>. On one large public dataset &mdash; a near-equal
+online-chess cohort whose order looks manufactured &mdash; the outcome is about 60% revealed skill
+(R&nbsp;&#8776;&nbsp;0.4) once a convergent skill estimate is admitted. At zero gain the process is a
+martingale, and the motion is non-ergodic: the ensemble advances while the typical trajectory peaks and
+declines. The contribution is not that hierarchy is noise, but a precise account of what a hierarchy's own
+trajectory can, and cannot, tell us about where it came from.
+"""
+
+[[publication]]
 id        = "position-amplifier"
 title     = "An Amplifier of Position, Not Competence: Why Hierarchy Emerges, What We Pay for It to Hold, and Why Its Cost Cannot Be Settled"
 date      = "2026/06/13"
