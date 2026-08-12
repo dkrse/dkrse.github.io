@@ -118,6 +118,42 @@ be honestly settled.
 """
 
 [[publication]]
+id        = "multiplicative-amplification-position"
+title     = "Multiplicative Amplification of Position in Social Hierarchies: Identifiable Dynamics and an Unidentifiable Seed"
+date      = "2026/08/07"
+doi       = "10.32388/KOR7OI"
+pdf_url   = "https://www.qeios.com/read/KOR7OI/pdf"
+preprint  = true
+language  = "en"
+codes     = "Qeios"
+keywords  = [
+  "social hierarchy", "multiplicative cascade", "position amplifier", "identifiability",
+  "state dependence", "unobserved heterogeneity", "Kesten tail index", "manufactured share",
+  "early-lead law", "cumulative advantage", "non-ergodicity",
+]
+abstract = """
+Trajectories of positions are widely used to argue that a hierarchy was built by amplification: the
+early ordering predicts the final one better than diffusion allows, and the excess is read as
+compounding. We show that this inference fails. Entities that merely differ in a persistent trait
+produce the same excess at zero gain, and that null carries a free parameter tunable to any lock-in
+speed: magnitude identifies nothing, only a within-system contrast does. Inside a falsifiable
+<em>normal form</em>, a multiplicative cascade amplifying <em>position</em>, we separate what a
+trajectory settles from what it cannot. The <em>dynamics</em> are identifiable: a necessity theorem, a
+non-monotone dispersion-maximising gain, a Hill-verified closed-form Kesten tail index tying tail
+heaviness to contestability, and a &radic;&tau; early-lead law. The <em>seed</em> is not: the persistent
+input is recovered, but its decomposition into capability and position is not a function of the
+trajectory. The obstruction is the amplified form of one panel econometrics knows, state dependence
+against unobserved heterogeneity, exact here. This is observational equivalence, not imprecision, so no
+quantity of data bears on it; the split must come from another observable, and what an exogenous handle
+returns is a proportion, the <em>manufactured share</em>
+R&nbsp;=&nbsp;1&nbsp;&minus;&nbsp;corr<sup>2</sup>, not a verdict. Both points bite: a within-Wikipedia
+revocation contrast supplies the capability-free test (&Delta;&rho;&nbsp;=&nbsp;0.11, 95% CI
+[0.09,&nbsp;0.13]; a third of it heterogeneity by placebo), and an online-chess cohort with every
+appearance of manufactured order is at least &#8776;62% revealed skill (R&nbsp;&#8776;&nbsp;0.38, an
+upper bound).
+"""
+
+[[publication]]
 id        = "candidacy-and-trigger"
 title     = "Candidacy and Trigger: A Two-Phase Empirical Model of Hierarchical Collapse"
 date      = "2026/05/18"
